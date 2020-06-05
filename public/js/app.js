@@ -19,9 +19,8 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = data.error
             } else {
                 messageOne.textContent = data.location
-                let msgText = 'Temperature ' + data.forecast.temperature + ' degree celcius. Feels like ' + data.forecast.feelsLike + ' degree celcius'
-                messageTwo.textContent = msgText
-                console.log(data.forecast)
+                messageTwo.textContent = 'Its ' + data.forecast.body.current.weather_descriptions[0] + ' here, Temperature is ' + data.forecast.body.current.temperature + ' degree celcius, and feels like ' + data.forecast.body.current.feelslike + ' degree celcius \n' + ''
+                console.log(data)
             }
         })
 })

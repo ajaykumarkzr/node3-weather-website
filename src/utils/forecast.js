@@ -9,18 +9,7 @@ const forecast = (lat, long, callback) => {
             callback('Unable to find location', undefined)
         }
         else {
-            callback(undefined, {
-                country: body.location.country,
-                region: body.location.region,
-                timeZoneId: body.location.timezone_id,
-                localTile: body.location.localtime,
-                weatherDescription: body.current.weather_descriptions[0],
-                windSpeed: body.current.wind_speed,
-                windDegree: body.current.wind_degree,
-                windDir: body.current.wind_dir,
-                temperature: body.current.temperature,
-                feelsLike: body.current.feelslike
-            })
+            callback(undefined, { body })
         }
     })
 }
